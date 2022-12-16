@@ -13,7 +13,7 @@ module.exports = function (source) {
   query = loaderUtils.parseQuery(this.query)
 
   try {
-    haml = spawn('haml', [ 'render', '-s'])
+    haml = spawn('haml', [ 'render', '-'])
     haml.stdin.write(source)
     haml.stdin.end()
     haml.stdout.on('data', function (data) {
